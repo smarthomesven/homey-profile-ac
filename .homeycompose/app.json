@@ -1,0 +1,36 @@
+{
+  "id": "nl.dypodex.profile-ac",
+  "version": "1.0.0",
+  "compatibility": ">=12.4.0",
+  "sdk": 3,
+  "runtime": "nodejs",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Profile"
+  },
+  "description": {
+    "en": "Your air has never felt smarter"
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [
+    "homey:wireless:ir"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "brandColor": "#A4A4A4",
+  "source": "https://github.com/smarthomesven/homey-profile-ac",
+  "bugs": {
+    "url": "https://github.com/smarthomesven/homey-profile-ac/issues"
+  },
+  "author": {
+    "name": "Sven Serlier",
+    "email": "sven@dypodex.com"
+  }
+}

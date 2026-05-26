@@ -1,0 +1,10 @@
+{
+  "type": "boolean",
+  "title": { 
+    "en": "Temperature up"
+  },
+  "getable": false,
+  "setable": true,
+  "uiComponent": "button",
+  "icon": "/assets/up.svg"
+}

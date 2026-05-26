@@ -1,0 +1,27 @@
+<script type="text/javascript">
+  (function () {
+
+    Homey.getOptions((err, options) => {
+      if (err) console.error(err);
+      createDevice();
+    });
+
+    function createDevice() {
+      const data = {
+        name: Homey.__("pair.airco.name"),
+        data: {
+          id: crypto.randomUUID()
+        }
+      };
+
+      Homey.createDevice(data, (err) => {
+        if (err) {
+          console.error('Error creating device: ', err);
+          return Homey.error(err);
+        }
+        return Homey.done();
+      });
+    }
+
+  })();
+</script>

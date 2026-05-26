@@ -1,0 +1,370 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "nl.dypodex.profile-ac",
+  "version": "1.0.0",
+  "compatibility": ">=12.4.0",
+  "sdk": 3,
+  "runtime": "nodejs",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Profile"
+  },
+  "description": {
+    "en": "Your air has never felt smarter"
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [
+    "homey:wireless:ir"
+  ],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "brandColor": "#A4A4A4",
+  "source": "https://github.com/smarthomesven/homey-profile-ac",
+  "bugs": {
+    "url": "https://github.com/smarthomesven/homey-profile-ac/issues"
+  },
+  "author": {
+    "name": "Sven Serlier",
+    "email": "sven@dypodex.com"
+  },
+  "flow": {
+    "actions": [
+      {
+        "id": "set_fan_speed",
+        "title": {
+          "en": "Set fan speed",
+          "nl": "Ventilatorsnelheid instellen"
+        },
+        "titleFormatted": {
+          "en": "Set fan speed to [[speed]]",
+          "nl": "Ventilatorsnelheid instellen op [[speed]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=airco"
+          },
+          {
+            "name": "speed",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "low",
+                "label": {
+                  "en": "Low",
+                  "nl": "Laag"
+                }
+              },
+              {
+                "id": "med",
+                "label": {
+                  "en": "Medium",
+                  "nl": "Medium"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High",
+                  "nl": "Hoog"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_mode",
+        "title": {
+          "en": "Set mode",
+          "nl": "Modus instellen"
+        },
+        "titleFormatted": {
+          "en": "Set mode to [[mode]]",
+          "nl": "Modus instellen op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=airco"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cool",
+                  "nl": "Koelen"
+                }
+              },
+              {
+                "id": "dry",
+                "label": {
+                  "en": "Dry",
+                  "nl": "Drogen"
+                }
+              },
+              {
+                "id": "fan",
+                "label": {
+                  "en": "Fan",
+                  "nl": "Ventilator"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "temp_up",
+        "title": {
+          "en": "Increase setpoint temperature",
+          "nl": "Ingestelde temperatuur verhogen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=airco"
+          }
+        ]
+      },
+      {
+        "id": "temp_down",
+        "title": {
+          "en": "Decrease setpoint temperature",
+          "nl": "Ingestelde temperatuur verlagen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=airco"
+          }
+        ]
+      },
+      {
+        "id": "swing",
+        "title": {
+          "en": "Switch swing mode",
+          "nl": "Swing in- of uitschakelen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=airco"
+          }
+        ]
+      },
+      {
+        "id": "timer",
+        "title": {
+          "en": "Set timer",
+          "nl": "Timer instellen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=airco"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Portable Air Conditioner",
+        "nl": "Mobiele airco"
+      },
+      "class": "airconditioning",
+      "capabilities": [
+        "onoff",
+        "temp_up",
+        "temp_down",
+        "mode_cool",
+        "mode_dry",
+        "mode_fan",
+        "fan_low",
+        "fan_medium",
+        "fan_high",
+        "swing",
+        "timer",
+        "units"
+      ],
+      "infrared": {
+        "satelliteMode": true
+      },
+      "capabilitiesOptions": {
+        "onoff": {
+          "getable": false,
+          "setable": true
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "infrared"
+      ],
+      "images": {
+        "small": "/drivers/airco/assets/images/small.png",
+        "large": "/drivers/airco/assets/images/large.png",
+        "xlarge": "/drivers/airco/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "add_device"
+        }
+      ],
+      "id": "airco"
+    }
+  ],
+  "capabilities": {
+    "fan_high": {
+      "type": "boolean",
+      "title": {
+        "en": "High"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/high.svg"
+    },
+    "fan_low": {
+      "type": "boolean",
+      "title": {
+        "en": "Low"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/low.svg"
+    },
+    "fan_medium": {
+      "type": "boolean",
+      "title": {
+        "en": "Medium"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/medium.svg"
+    },
+    "mode_cool": {
+      "type": "boolean",
+      "title": {
+        "en": "Cool"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/cool.svg"
+    },
+    "mode_dry": {
+      "type": "boolean",
+      "title": {
+        "en": "Dry"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/dry.svg"
+    },
+    "mode_fan": {
+      "type": "boolean",
+      "title": {
+        "en": "Fan"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/fan.svg"
+    },
+    "swing": {
+      "type": "boolean",
+      "title": {
+        "en": "Swing"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/swing.svg"
+    },
+    "temp_down": {
+      "type": "boolean",
+      "title": {
+        "en": "Temperature down"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/down.svg"
+    },
+    "temp_up": {
+      "type": "boolean",
+      "title": {
+        "en": "Temperature up"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/up.svg"
+    },
+    "timer": {
+      "type": "boolean",
+      "title": {
+        "en": "Timer"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/timer.svg"
+    },
+    "units": {
+      "type": "boolean",
+      "title": {
+        "en": "°C ↔ °F"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/units.svg"
+    }
+  },
+  "signals": {
+    "ir": {
+      "airco": {
+        "type": "prontohex",
+        "repetitions": 10,
+        "cmds": {
+          "POWER": "0000 006D 0024 0000 015A 00A9 0016 0016 0016 0016 0016 0016 0016 0016 0016 0040 0016 0016 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0040 0016 0040 0016 0040 0016 0040 0016 0040 0016 0620 015A 0040 0016 09BA",
+          "TIMER": "0000 006D 0024 0000 0159 00AA 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0016 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0041 0016 0041 0016 0041 0016 0041 0016 0621 0159 0041 0016 09BA",
+          "UP": "0000 006D 0024 0000 0159 00AB 0016 0016 0016 0016 0016 0016 0016 0016 0016 0040 0016 0016 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0040 0016 0016 0016 0040 0016 0016 0016 0040 0016 0016 0016 0016 0016 0016 0016 0016 0016 0040 0016 0016 0016 0040 0016 0016 0016 0040 0016 0040 0016 0040 0016 0621 0159 0040 0016 09BA",
+          "DOWN": "0000 006D 0024 0000 0159 00AA 0016 0016 0016 0016 0016 0016 0016 0016 0016 0040 0016 0016 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0040 0016 0016 0016 0040 0016 0040 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0040 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0040 0016 0620 0159 0040 0016 09BA",
+          "COOL": "0000 006D 0024 0000 0159 00AB 0016 0016 0016 0016 0016 0016 0016 0016 0016 0040 0016 0016 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0016 0016 0040 0016 0016 0016 0040 0016 0016 0016 0016 0016 0016 0016 0040 0016 0040 0016 0016 0016 0040 0016 0016 0016 0040 0016 0040 0016 0040 0016 0621 0159 0040 0016 09BA",
+          "DRY": "0000 006D 0024 0000 015A 00AA 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0016 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 0041 0016 0041 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0041 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0041 0016 0621 015A 0041 0016 09BA",
+          "FAN": "0000 006D 0024 0000 015B 00A9 0016 0016 0016 0016 0016 0016 0016 0016 0016 0040 0016 0016 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0016 0016 0016 0016 0040 0016 0016 0016 0016 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0040 0016 0040 0016 0040 0016 0040 0016 0621 015B 0040 0016 09BA",
+          "SWING": "0000 006D 0024 0000 0159 00AA 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0016 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0016 0016 0041 0016 0041 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0041 0016 0041 0016 0621 0159 0041 0016 09BA",
+          "HIGH": "0000 006D 0024 0000 0158 00AC 0016 0016 0016 0016 0016 0016 0016 0016 0016 0040 0016 0016 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0040 0016 0040 0016 0016 0016 0040 0016 0016 0016 0016 0016 0016 0016 0040 0016 0016 0016 0016 0016 0040 0016 0016 0016 0040 0016 0040 0016 0040 0016 0621 0158 0040 0016 09BA",
+          "MED": "0000 006D 0024 0000 015A 00AA 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0016 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0016 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0016 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0041 0016 0621 015A 0041 0016 09BA",
+          "LOW": "0000 006D 0024 0000 0159 00AB 0016 0016 0016 0016 0016 0016 0016 0016 0016 0040 0016 0016 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0016 0016 0040 0016 0040 0016 0040 0016 0016 0016 0040 0016 0016 0016 0040 0016 0016 0016 0016 0016 0016 0016 0016 0016 0040 0016 0016 0016 0040 0016 0016 0016 0040 0016 0040 0016 0040 0016 0040 0016 0621 0159 0040 0016 09BA",
+          "UNIT": "0000 006D 0024 0000 0159 00AA 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0016 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 0041 0016 0041 0016 0041 0016 0016 0016 0016 0016 0041 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0016 0041 0016 0041 0016 0016 0016 0041 0016 0041 0016 0041 0016 0041 0016 0041 0016 0621 0159 0041 0016 09BA"
+        }
+      }
+    }
+  }
+}

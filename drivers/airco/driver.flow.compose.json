@@ -1,0 +1,112 @@
+{
+    "actions": [
+        {
+            "id": "set_fan_speed",
+            "title": {
+                "en": "Set fan speed",
+                "nl": "Ventilatorsnelheid instellen"
+            },
+            "titleFormatted": {
+                "en": "Set fan speed to [[speed]]",
+                "nl": "Ventilatorsnelheid instellen op [[speed]]"
+            },
+            "args": [
+                {
+                    "name": "speed",
+                    "type": "dropdown",
+                    "values": [
+                        {
+                            "id": "low",
+                            "label": {
+                                "en": "Low",
+                                "nl": "Laag"
+                            }
+                        },
+                        {
+                            "id": "med",
+                            "label": {
+                                "en": "Medium",
+                                "nl": "Medium"
+                            }
+                        },
+                        {
+                            "id": "high",
+                            "label": {
+                                "en": "High",
+                                "nl": "Hoog"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "set_mode",
+            "title": {
+                "en": "Set mode",
+                "nl": "Modus instellen"
+            },
+            "titleFormatted": {
+                "en": "Set mode to [[mode]]",
+                "nl": "Modus instellen op [[mode]]"
+            },
+            "args": [
+                {
+                    "name": "mode",
+                    "type": "dropdown",
+                    "values": [
+                        {
+                            "id": "cool",
+                            "label": {
+                                "en": "Cool",
+                                "nl": "Koelen"
+                            }
+                        },
+                        {
+                            "id": "dry",
+                            "label": {
+                                "en": "Dry",
+                                "nl": "Drogen"
+                            }
+                        },
+                        {
+                            "id": "fan",
+                            "label": {
+                                "en": "Fan",
+                                "nl": "Ventilator"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "temp_up",
+            "title": {
+                "en": "Increase setpoint temperature",
+                "nl": "Ingestelde temperatuur verhogen"
+            }
+        },
+        {
+            "id": "temp_down",
+            "title": {
+                "en": "Decrease setpoint temperature",
+                "nl": "Ingestelde temperatuur verlagen"
+            }
+        },
+        {
+            "id": "swing",
+            "title": {
+                "en": "Switch swing mode",
+                "nl": "Swing in- of uitschakelen"
+            }
+        },
+        {
+            "id": "timer",
+            "title": {
+                "en": "Set timer",
+                "nl": "Timer instellen"
+            }
+        }
+    ]
+}

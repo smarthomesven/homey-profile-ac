@@ -1,0 +1,1 @@
+Voeg je Profile mobiele airco toe aan Homey om deze op afstand te bedienen. Je kan ook de ventilatorsnelheid, modus, swing stand, timer, aan/uit en de ingestelde temperatuur verhogen of verlagen vanaf je Flows.

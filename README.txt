@@ -1,0 +1,1 @@
+Add your Profile portable air conditioner to Homey and control it remotely. You can also use the fan speed, mode, swing settings, timer, on/off and increase or decrease the setpoint temperature from your Flows. Note that this app uses Infrared, so Homey needs to be within line of sight of your air conditioner.

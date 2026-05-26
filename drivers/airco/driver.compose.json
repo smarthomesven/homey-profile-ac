@@ -1,0 +1,46 @@
+{
+  "name": {
+    "en": "Portable Air Conditioner",
+    "nl": "Mobiele airco"
+  },
+  "class": "airconditioning",
+  "capabilities": [
+    "onoff",
+    "temp_up",
+    "temp_down",
+    "mode_cool",
+    "mode_dry",
+    "mode_fan",
+    "fan_low",
+    "fan_medium",
+    "fan_high",
+    "swing",
+    "timer",
+    "units"
+  ],
+  "infrared": {
+    "satelliteMode": true
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "getable": false,
+      "setable": true
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "infrared"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "add_device"
+    }
+  ]
+}
